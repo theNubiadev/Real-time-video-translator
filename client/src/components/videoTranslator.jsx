@@ -1,6 +1,7 @@
 "use client"
 import React, {useRef, useState, useEffect} from 'react'
 import {Card, CardContent} from '@/components/ui/card'
+import {Button} from '@/components/ui/button'
 import { Mic, Play, Square } from "lucide-react"
 import {toast} from "sonner"
 function videoTranslator() {
@@ -9,7 +10,7 @@ const videoRef = useRef(null)
 const [isRecording, setIsRecording] = useState(false)
 const [transcript, setTranscript] = useState('')
 const [selectedLanguage, setSelectedLanguage] = useState('es')
-const [transaltion, setTransaltion] = useState("")
+const [translation, setTranslation] = useState("")
 
 const [socket, setSocket] = useState(null);
 const mediaRecorderRef = useRef(null);
@@ -124,7 +125,7 @@ const handleLanguageChange = (language) => {
           <CardContent className="p-4">
             <div className="flex justify-between items-center mb-4">
               <h3 className="text-lg font-medium">Translation Settings</h3>
-              <LanguageSelector selectedLanguage={selectedLanguage} onLanguageChange={handleLanguageChange} />
+              {/* <LanguageSelector selectedLanguage={selectedLanguage} onLanguageChange={handleLanguageChange} /> */}
             </div>
 
             <div className="flex gap-2">
